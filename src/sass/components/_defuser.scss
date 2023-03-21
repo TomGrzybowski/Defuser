@@ -1,0 +1,182 @@
+@use '../assets' as *;
+
+.my_game_main {
+  grid-template-columns: auto;
+}
+
+.defuser {
+  overflow: hidden;
+  & > .container {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__form {
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
+
+  &__form > input {
+    width: 45px;
+  }
+
+  &__game {
+    border: 2px black solid;
+    width: fit-content;
+    padding: 5px;
+    margin: auto;
+  }
+
+  &__rows {
+    position: relative;
+    &::after {
+      content: 'max: 40';
+      color: $font-light;
+      position: absolute;
+      font-size: 0.8rem;
+      top: 25px;
+      left: 110%;
+      width: 60px;
+    }
+  }
+
+  &__cols {
+    position: relative;
+    &::after {
+      content: 'max: 40';
+      color: $font-light;
+      position: absolute;
+      font-size: 0.8rem;
+      top: 25px;
+      left: 110%;
+      width: 60px;
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+  }
+
+  &__cell {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 1px black solid;
+    line-height: 25x;
+    text-align: center;
+  }
+
+  &__cell_content {
+    line-height: 25px;
+  }
+
+  &__play {
+    margin-left: 20px;
+    cursor: pointer;
+    border: 2px solid $contrast;
+    border-radius: 5px;
+
+    color: $contrast;
+    background-color: $background-main;
+  }
+
+  &__header {
+    height: 40px;
+    // border: 1px dashed green;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__bomb_counter {
+    display: inline;
+    // margin: auto;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  &__bomb_counter_span {
+    color: $contrast;
+    font-weight: 900;
+    font-size: 1.3em;
+    // border: 1px solid $contrast;
+    // width: 100px;
+  }
+
+  &__name {
+    text-align: center;
+  }
+}
+
+.unrevealed {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background-color: $background-card;
+  -webkit-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+  -moz-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+  box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+}
+
+.fa-flag,
+.fa-bomb,
+.fa-question {
+  padding: 3px;
+  height: 25px;
+  width: 25px;
+}
+
+.modal {
+  position: absolute;
+  min-width: 50%;
+  width: fit-content;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: $background-card;
+  z-index: 11;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 11;
+
+  transition-property: visibility, opacity;
+  transition-duration: 0.25s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-btn {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $background-card;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.end-title {
+  text-align: center;
+}
+.end-text {
+  text-align: center;
+}

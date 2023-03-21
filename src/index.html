@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Tomasz Grzybowski</title>
+
+    <script
+      src="https://kit.fontawesome.com/fecc508be4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./sass/style.scss" />
+  </head>
+
+  <body>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="close-btn" type="button" data-modal-close>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="victory is-hidden">
+          <h3 class="end-title">You won!</h3>
+          <p class="end-text">
+            Congratulations, please consider hiring Tomasz
+            <i class="fa-regular fa-face-smile"></i>
+          </p>
+        </div>
+        <div class="defeat is-hidden">
+          <h3 class="end-title">Unfortunately, You lost</h3>
+          <p class="end-text">
+            Do not worry, you may try again. Please also consider hiring Tomasz
+            <i class="fa-regular fa-face-smile"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="my_game_main">
+      <section class="defuser">
+        <div class="container">
+          <div class="instruction" data-shown="false">
+            <div class="instruction__content">
+              <ol class="instruction__list">
+                <li class="instruction__item">
+                  <p>Click on cells to discover what they hide.</p>
+                  <p>Each cell may be either:</p>
+                  <ul>
+                    <li>empty</li>
+                    <li>a number</li>
+                    <li>a bomb</li>
+                  </ul>
+                </li>
+                <li class="instruction__item">
+                  <p>
+                    Each number represents the amount of bombs that the cell
+                    touches
+                  </p>
+                  <img
+                    src="./assets/instruction-screen-1.png"
+                    alt="Screen of number 4 surrounded by question marks"
+                  />
+                </li>
+                <li class="instruction__item">
+                  <p><b>Win condition</b></p>
+                  <p>Discover all non-bombs cells to win.</p>
+                  <p>If you discover a bomb, you lose.</p>
+                </li>
+              </ol>
+              <p class="instruction__tip">
+                TIP: You may right-click on a cell to flag
+                <i class="fa-solid fa-flag"></i> it as a bomb or to leave a
+                question mark <i class="fa-solid fa-question"></i> for later
+              </p>
+            </div>
+            <div class="instruction__button">
+              How to play
+              <i class="fa-solid fa-chevron-down instruction__icon"></i>
+            </div>
+          </div>
+          <h1 class="defuser__name">Defuser</h1>
+          <form name="game_settings" autocomplete="off" class="defuser__form">
+            <label for="defuser__rows" class="defuser__rows">Rows:</label>
+            <input
+              type="number"
+              id="defuser__rows"
+              name="defuser__rows"
+              placeholder="10"
+              value="7"
+              min="5"
+              max="40"
+            />
+
+            <label for="defuser__cols" class="defuser__cols">Columns:</label>
+            <input
+              type="number"
+              id="defuser__cols"
+              name="defuser__cols"
+              placeholder="10"
+              value="7"
+              min="5"
+              max="40"
+            />
+
+            <label for="defuser__bombs">Bombs:</label>
+            <input
+              type="number"
+              id="defuser__bombs"
+              name="defuser__bombs"
+              placeholder="10"
+              value="5"
+              min="1"
+              max="400"
+            />
+
+            <button type="button" class="defuser__play" id="defuser__play">
+              PLAY
+            </button>
+          </form>
+
+          <div class="defuser__game"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <h2 class="footer__header">Contact</h2>
+        <ul class="footer__list">
+          <li class="phone_number">
+            <a class="footer__link" href="tel:+48111111111">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-mobile"></use>
+              </svg>
+              TBD
+            </a>
+          </li>
+          <li>
+            <a class="footer__link" href="mailto:t.grzybowski94@gmail.com">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-envelope"></use>
+              </svg>
+              t.grzybowski94@gmail.com
+            </a>
+          </li>
+          <li>
+            <a class="footer__link" href="./index.html">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-location"></use>
+              </svg>
+              Wrocław, Poland
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer__link"
+              href="https://github.com/TomGrzybowski?tab=repositories"
+              target="_blank"
+            >
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-github"></use>
+              </svg>
+              Github
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer__link"
+              href="https://www.linkedin.com/in/tomasz-grzybowski-2075ba158/"
+              target="_blank"
+            >
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-li"></use>
+              </svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./javascript/instruction.js"></script>
+    <script src="./javascript/myGame.js"></script>
+  </body>
+</html>
